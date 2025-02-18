@@ -17,6 +17,23 @@ import io
 import qrcode
 import pyfiglet
 
+
+# Buka config.json
+with open("config.json", "r") as file:
+    config = json.load(file)
+
+# Ambil token dari environment variable
+TOKEN = os.getenv("DISCORD_TOKEN")  # Ambil token dari terminal
+
+if not TOKEN:
+    print("Token tidak ditemukan! Pastikan kamu menjalankan script dengan token yang benar.")
+    exit(1)
+
+# Lanjutkan eksekusi bot
+print(f"Bot berjalan dengan prefix {config['prefix']}")
+# Di sini tambahkan kode untuk menjalankan bot, misalnya:
+# client.run(TOKEN)
+
 y = Fore.LIGHTYELLOW_EX
 b = Fore.LIGHTBLUE_EX
 w = Fore.LIGHTWHITE_EX
